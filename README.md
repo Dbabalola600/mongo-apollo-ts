@@ -14,3 +14,6 @@ import postman collection for endpoint
  
  # server
  http://localhost:4000/graphql
+
+ # mongo 
+ mongo uri is in config file 
