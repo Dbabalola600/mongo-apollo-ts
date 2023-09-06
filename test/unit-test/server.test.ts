@@ -29,7 +29,7 @@ it('Should get all users', async () => {
 it('Should get token by email', async () => {
   const result = await testServer.executeOperation({
     query: `query {
-      token(email: "vinod@test.com")
+      token(email: "dami@test.com")
     }`
   });
   expect(result.data);
@@ -60,9 +60,9 @@ it('Should create new record', async () => {
     query: `mutation {
       addUser(
         input: {
-          email: "vinodd${Math.random()}@test.com"
-          name: "vinod"
-          provider: "self"
+          email: "dami${Math.random()}@test.com"
+          name: "dami"
+          password: "password"
           contactType:"personal"
          phone :"999999999"
         }

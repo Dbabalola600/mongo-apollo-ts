@@ -1,7 +1,7 @@
 {
-  "name": "graphql-mongodb-typescript-blog",
+  "name": "graphql-mongodb-typescript",
   "version": "1.0.0",
-  "description": "Blog starter with GraphQL,Typescript,MongoDB",
+  "description": " starter with GraphQL,Typescript,MongoDB",
   "main": "dist/server.js",
   "scripts": {
     "start": "npm run build && node dist/server.js",
@@ -25,7 +25,7 @@
       }
     }
   },
-  "author": "Vinod",
+  "author": "dami600bab@gmail.com",
   "license": "MIT",
   "devDependencies": {
     "@types/compression": "^0.0.36",

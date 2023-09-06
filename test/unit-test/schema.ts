@@ -6,7 +6,7 @@ type User {
   email: String
   name: String
   provider: String
-  photoUrl: String
+  password: String
   contactType:String
   phone:String
 }
@@ -17,6 +17,15 @@ type Query {
 type getUsersData {
 status:Status
 data:[User]
+}
+
+type Query{
+  SignIn(email: String! ,password: String!): SignInData
+}
+
+type SignInData{
+  status: Status
+  data: User
 }
 
 type Query {
@@ -51,7 +60,7 @@ input InputUser {
   email: String
   name: String
   provider: String
-  photoUrl: String
+  password: String
   contactType:String
   phone:String
 }

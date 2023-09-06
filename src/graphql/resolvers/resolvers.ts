@@ -17,7 +17,10 @@ const resolvers: IResolvers = {
     },
     findByUserId: (_: void, args: any, ctx: Context, _info: GraphQLResolveInfo) => {
       return usersController.findByUserId(args, ctx);
-    }
+    },
+    SignIn: (_: void, args: any, ctx: Context, _info: GraphQLResolveInfo) => {
+      return usersController.SignIn(args, ctx)
+    },
   },
   Mutation: {
     addUser: (_, inputObject, ctx: Context) => {

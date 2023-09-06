@@ -14,6 +14,9 @@ const app = express();
 const mHelper = new MongoHelper();
 mHelper.initiateMongoConnection();
 
+const PORT = 4000
+
+
 const server = new ApolloServer({
   schema,
   validationRules: [depthLimit(7)],
@@ -30,6 +33,6 @@ server.applyMiddleware({ app, path: '/graphql' });
 
 const httpServer = createServer(app);
 
-httpServer.listen({ port: process.env.PORT }, (): void =>
-  console.log(`\n🚀 GraphQL is now running on http://localhost:${process.env.PORT}/graphql`)
+httpServer.listen({ port: PORT }, (): void =>
+  console.log(`\n🚀 GraphQL is now running on http://localhost:${PORT}/graphql`)
 );

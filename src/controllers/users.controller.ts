@@ -3,6 +3,7 @@ import { buildErrorResponse } from '../utils/buildErrorResponse';
 import { successResponse } from '../utils/successResponse'
 const Users = require('../models/users');
 
+
 export class UsersController {
   async addUser(inputObject: any, ctx: Context) {
     try {
@@ -12,6 +13,33 @@ export class UsersController {
       return buildErrorResponse(error)
     }
   }
+
+
+  async SignIn(inputObject: any, ctx: Context) {
+    try {
+      const IsUser = await Users.findOne({ email: inputObject.email })
+      if (IsUser) {
+        if (inputObject.password === IsUser.password) {
+          return successResponse(IsUser, 'signed in');
+        }else{
+          return successResponse({}, 'wrong password');
+        }
+      } else {
+        const IsUser2 = await Users.findOne({ name: inputObject.email })
+        if (inputObject.password === IsUser2.password) {
+          return successResponse(IsUser2, 'signed it');
+        }else{
+          return successResponse({}, 'wrong password');
+        }
+      }
+
+    } catch (error) {
+      return buildErrorResponse(error)
+    }
+  }
+
+
+
   async getUsers(inputObject: any, ctx: Context) {
     try {
       let contactType = []
